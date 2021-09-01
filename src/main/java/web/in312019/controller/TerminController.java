@@ -1,37 +1,16 @@
 package web.in312019.controller;
 
-import web.in312019.entity.ClanCentra;
-import web.in312019.entity.Ocena;
 import web.in312019.entity.Termin;
-import web.in312019.entity.Trener;
-import web.in312019.entity.Trening;
-import web.in312019.entity.DTO.KorisnikDTO;
 import web.in312019.entity.DTO.RasporedDTO;
-import web.in312019.entity.DTO.ResponseDTO;
-import web.in312019.service.ClanCentraService;
-import web.in312019.service.OcenaService;
-import web.in312019.service.SalaService;
-import web.in312019.service.TerminService;
-import web.in312019.service.TrenerService;
-import web.in312019.service.TreningService;
+import web.in312019.service.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import net.bytebuddy.asm.Advice.This;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping(value = "/api/termini")

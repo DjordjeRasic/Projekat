@@ -1,4 +1,4 @@
-$(document).ready(function () { 
+$(document).ready(function () {
     let role = localStorage.getItem("role");
     if(role == null || role == 0){
         role == 0;
@@ -16,37 +16,48 @@ $(document).ready(function () {
         zastita,
         id
     }
-    
+
     $.ajax({
-        type: "POST",                                              
-        url: "http://localhost:8080/api/trener/prikazSpiskova",                
+        type: "POST",
+        url: "http://localhost:8080/api/sala/sve",
         dataType: "json",
-        contentType: "application/json",                            
-        data: JSON.stringify(provera),                                       
+        contentType: "application/json",
+        data: JSON.stringify(provera),
         success: function (res) {
-            const nazivi = [];
-            const sale = [];
-            for (i = 0; i < res.length; i++) {    
-                if(!sale.includes(res[i].nazivSale)) {
-                    sale.push(res[i].nazivSale);
-                    let sala = "<option>" + res[i].nazivSale + "</option>";   
-                    $('#sala').append(sala); 
-                }                   
-                if(!nazivi.includes(res[i].nazivTreninga)) {
-                    nazivi.push(res[i].nazivTreninga);
-                    let naziv = "<option value='" + res[i].nazivTreninga + "'>" + res[i].nazivTreninga + "</option>";  
-                    $("#naziv").append(naziv); 
-                }                
+
+            for (i = 0; i < res.length; i++) {
+                let sala = "<option>" + res[i].oznakaSale + "</option>";
+                $('#sala').append(sala);
+
+
             }
         },
-        error: function (res) {                                     
+        error: function (res) {
+            console.log("ERROR:\n", res);
+        }
+    });
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/api/trening/svi",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(provera),
+        success: function (res) {
+            const nazivi = [];
+            //const sale = [];
+            for (i = 0; i < res.length; i++) {
+                let naziv = "<option value='" + res[i].naziv + "'>" + res[i].naziv + " | " + res[i].opis + " | " + res[i].tip + "</option>";
+                $("#trening").append(naziv);
+            }
+        },
+        error: function (res) {
             console.log("ERROR:\n", res);
         }
     });
 });
 
-$(document).on("submit", "form", function (event) {           
-    event.preventDefault(); 
+$(document).on("submit", "form", function (event) {
+    event.preventDefault();
     let pocetakTermina = $("#pocetak").val();
     let krajTermina = $("#kraj").val();
     let datum1 = pocetakTermina.substring(0, 10);
@@ -63,7 +74,7 @@ $(document).on("submit", "form", function (event) {
     let minute2 = cutString(krajTermina, 14, 16);
     let trajanjeTermina = (Number(sati2) * 60 + Number(minute2)) - (Number(sati1) * 60 + Number(minute1));
     let cenaTermina = $("#cena").val();
-    let nazivTreninga = $("#naziv").val();
+    let nazivTreninga = $("#trening").val();
     let nazivSale = $("#sala").val();
     let zastita = localStorage.getItem("role");
     let id = localStorage.getItem("id");
@@ -83,12 +94,12 @@ $(document).on("submit", "form", function (event) {
 
     console.log(izmenjenTermin);
     $.ajax({
-        type: "POST",                                               
-        url: "http://localhost:8080/api/trener/izmeniTermin",                 
-        dataType: "json",                                           
-        contentType: "application/json",                            
-        data: JSON.stringify(izmenjenTermin),                          
-        success: function (res) {                                   
+        type: "POST",
+        url: "http://localhost:8080/api/trener/izmeniTermin",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(izmenjenTermin),
+        success: function (res) {
             console.log(res);
             if(res.zastita == 4) {
                 alert("Morate biti trener za ovu mogucnost!");
@@ -96,18 +107,18 @@ $(document).on("submit", "form", function (event) {
                 alert("Pocetak termina upada u drugi termin");
             } else if(res.zastita == 2) {
                 alert("Kraj termina upada u drugi termin");
-            } else if(res.zastita == 3) { 
+            } else if(res.zastita == 3) {
                 alert("Termin preklapa drugi termin");
-            } else { 
+            } else {
                 alert("Termin je uspesno izmenjen!");
                 window.location.href = "terminiTrenera.html";
             }
         },
-        error: function () {                                        
+        error: function () {
             alert("Greška!");
         }
     });
-    
+
 });
 
 function cutString(input, begin, end) {
@@ -116,6 +127,6 @@ function cutString(input, begin, end) {
 
 function odjaviSe() {
     window.location.href = "../../index.html";
-    window.localStorage.setItem("role", 0); 
-    window.localStorage.setItem("id", 0); 
+    window.localStorage.setItem("role", 0);
+    window.localStorage.setItem("id", 0);
 }

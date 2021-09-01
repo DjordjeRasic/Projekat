@@ -231,6 +231,7 @@ public class TrenerService {
 			}
 		}
 		Trening trening = null;
+		System.out.println(info.getNazivTreninga());
 		List<Trening> treninzi = this.treningRepository.findAll();
 		for(Trening t : treninzi) {
 			if(t.getNazivTreninga().equalsIgnoreCase(info.getNazivTreninga())) {
@@ -283,6 +284,7 @@ public class TrenerService {
 		if(termin.getPocetakTermina() != null) { terminToUpdate.setPocetakTermina(termin.getPocetakTermina()); }
 		if(termin.getKrajTermina() != null) { terminToUpdate.setKrajTermina(termin.getKrajTermina()); }
 		if(termin.getTrajanjeTermina() != 0) { terminToUpdate.setTrajanjeTermina(termin.getTrajanjeTermina()); }
+		
         this.terminRepository.save(terminToUpdate);
         
         RasporedDTO retVal = new RasporedDTO(info.getPocetakTermina(), info.getKrajTermina(), info.getTrajanjeTermina(), info.getCenaTermina(),

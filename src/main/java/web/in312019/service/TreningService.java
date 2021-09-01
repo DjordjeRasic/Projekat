@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import web.in312019.entity.Trening;
 import web.in312019.entity.DTO.RasporedDTO;
+import web.in312019.entity.DTO.TreningDTO;
 import web.in312019.repository.TreningRepository;
 @Service
 public class TreningService {
@@ -28,6 +29,15 @@ public class TreningService {
 	public List<Trening> findAll() {
 		List<Trening> trenings = this.treningRepository.findAll();
         return trenings;
+	}
+	
+	public List<TreningDTO> findAllDTO() {
+		List<Trening> trenings = this.treningRepository.findAll();
+		List<TreningDTO> retVal = new ArrayList<>();
+		for(Trening trening : trenings) {
+			retVal.add(new TreningDTO(trening.getId(), trening.getNazivTreninga(), trening.getOpis(), trening.getTip()));
+		}
+        return retVal;
 	}
 
 	public Trening save(Trening trening) {

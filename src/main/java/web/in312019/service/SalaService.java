@@ -6,21 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import web.in312019.entity.Sala;
+import web.in312019.entity.Trener;
 import web.in312019.entity.DTO.ResponseDTO;
 import web.in312019.entity.DTO.SalaDTO;
 import web.in312019.repository.FitnessCentarRepository;
 import web.in312019.repository.SalaRepository;
+import web.in312019.repository.TrenerRepository;
 
 @Service
 public class SalaService {
 
 	private final SalaRepository salaRepository;
 	private final FitnessCentarRepository centarRepository;
+	private final TrenerRepository trenerRepository;
 	
 	@Autowired
-    public SalaService(SalaRepository salaRepository, FitnessCentarRepository centarRepository) {
+    public SalaService(SalaRepository salaRepository, FitnessCentarRepository centarRepository, TrenerRepository trenerRepository) {
         this.salaRepository = salaRepository;
         this.centarRepository = centarRepository;
+        this.trenerRepository = trenerRepository;
     }
 	
 	
@@ -91,6 +95,17 @@ public class SalaService {
 		}
 		this.salaRepository.save(updatedSala);
 		return new ResponseDTO(0, "Sala je uspesno azurirana!");
+	}
+	
+	public List<SalaDTO> sve(Long id){
+		Trener trener = this.trenerRepository.getOne(id);
+		Set<Sala> sale = trener.getFitnessCentar().getSale();
+		List<SalaDTO> retVal = new ArrayList<>();
+		for(Sala sala : sale) {
+			if(sala.getuUpotrebi())
+				retVal.add(new SalaDTO(sala.getId(), sala.getKapacitet(),sala.getOznakaSale(), true, sala.getFitnessCentar().getId(), sala.getFitnessCentar().getNazivCentra()));
+		}
+		return retVal;
 	}
 
 	
