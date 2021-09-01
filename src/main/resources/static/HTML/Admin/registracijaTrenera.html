@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracija Trenera</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Admin/registracijaTrenera.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="zahteviTrenera.html" target="_self">Zahtevi Trenera</a></li>
+            <li><a href="prikazTrenera.html" target="_self">Prikaz Trenera</a></li>
+            <li><a href="registracijaTrenera.html" target="_self">Registruj Trenera</a></li>
+            <li><a href="fitnessCentar.html" target="_self">Fitness Centri</a></li>
+            <li><a href="prikazSala.html" target="_self">Prikaz sala</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <form name="registracija" method="POST">
+            <fieldset>
+                <h3>Registracija Trenera</h3>
+                <input id="username" name="username" type="text" required placeholder="Korisničko ime">
+                <input id="password" type="password" name="password" required placeholder="Lozinka">
+                <input id="confirmPassword" type="password" name="confirmPassword" required placeholder="Potvrdite lozinku">
+                <input id="firstName" type="text" name="firstName" required placeholder="Ime">
+                <input id="lastName" type="text" name="lastName" required placeholder="Prezime">
+                <input id="email" type="email" name="email" required placeholder="Email adresa">
+                <label for="date">Datum rođenja:</label>
+                <input id="date" type="date" nane="date" required>
+                <input type="tel" id="contact" name="contact" required placeholder="Broj telefona">
+                <select name="centar" id="centar" required>
+                    <option value="">Fitness Centar</option>
+                </select>
+                <input type="submit" id="reg" name="reg" required value="Registruj">
+                
+            </fieldset> 
+        </form>
+    </div>
+    <button onclick = "odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>

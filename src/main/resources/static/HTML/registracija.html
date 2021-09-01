@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../Javascript/registracija.js"></script>
+    <title>Registracija</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../../index.html" target="_self">Početna</a></li>
+            <li><a href="termini.html" target="_self">Termini</a></li>
+            <li><a href="login.html" target="_self">Prijava</a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <form name="registracija" method="POST">
+            <fieldset>
+                <h3>Registracija</h3>
+                <input id="username" name="username" type="text" required placeholder="Korisničko ime">
+                <input id="password" type="password" name="password" required placeholder="Lozinka">
+                <input id="confirmPassword" type="password" name="confirmPassword" required placeholder="Potvrdite lozinku">
+                <input id="firstName" type="text" name="firstName" required placeholder="Ime">
+                <input id="lastName" type="text" name="lastName" required placeholder="Prezime">
+                <input id="email" type="email" name="email" required placeholder="Email adresa">
+                <label for="date">Datum rođenja:</label>
+                <input id="date" type="date" nane="date" required>
+                <input type="tel" id="contact" name="contact" required placeholder="Broj telefona">
+                <label for="uloga">Odaberite ulogu:</label>
+                <select name="uloga" id="uloga">
+                    <option value="clan">Član</option>
+                    <option value="trener">Trener</option>
+                </select>
+                <br>
+                <label for="centar">Odaberite centar:</label>
+                <select name="centar" id="centar">
+                    <option value="0">Fitness Centar</option>
+                </select>
+                <p>Već imate nalog? <a href="login.html">Prijavite se</a></p>
+                <input type="submit" id="reg" name="reg" required value="Registruj se">
+            </fieldset> 
+        </form>
+    </div>
+</body>
+</html>

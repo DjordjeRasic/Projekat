@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../Javascript/login.js"></script>
+    <title>Prijava</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../../index.html" target="_self">Početna</a></li>
+            <li><a href="termini.html" target="_self">Termini</a></li>
+            <li><a href="registracija.html" target="_self">Registracija</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="wrapper">
+            <form method="POST" name="prijava">
+                <fieldset>
+                    <h3>LOGIN</h3>
+                    <input id="username" name="username" type="text"placeholder="Korisničko ime" required>
+                    <input id="password" type="password" name="password" placeholder="Lozinka" required>
+                    <p>Nemate nalog? <a href="registracija.html">Registrujte se</a></p>
+                    <input type="submit" value="Prijavi se" id="log" name="log">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

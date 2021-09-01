@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodavanje</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Trener/dodavanjeTermina.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="terminiTrenera.html" target="_self">Termini</a></li>
+            
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <form method="POST" name = "forma">
+            <fieldset>
+                <h3>Novi Termin</h3>
+                <label for="pocetak">Početak termina:</label>
+                <input id="pocetak" name="pocetak" type="datetime-local" required>
+                <label for="kraj">Kraj termina:</label>
+                <input id="kraj" name="kraj" type="datetime-local" required>
+                <label for="cena">Cena termina:</label>
+                <input id="cena" name="cena" type="text" required>
+                <select name = "naziv" id="naziv">
+                    <option value = "0">Naziv</option>
+                </select>
+                <select id="sala" name="sala" required>
+                    <option value="0">Sala</option>
+                </select>
+                <input class="addButton" type="submit" value="Dodaj">
+            </fieldset>
+        </form>
+    </div>
+    <button onclick="odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>

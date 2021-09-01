@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menjanje Termina</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Trener/menjanjeTermina.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="terminiTrenera.html" target="_self">Termini</a></li>
+            
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <form method="GET" name="menjanjeTermina">
+            <fieldset>
+                <h3>Menjanje Termina</h3>
+                <label for="pocetak">Početak termina:</label>
+                <input id="pocetak" name="pocetak" type="datetime-local">
+                <label for="kraj">Kraj termina:</label>
+                <input id="kraj" name="kraj" type="datetime-local">
+                <label for="cena">Cena termina:</label>
+                <input id="cena" name="cena" type="text">
+                <select id="trening" name="trening" >
+                    <option value = "0">TRENING</option>
+                </select>
+                <select id="sala" name="sala" >
+                    <option value = "0">SALA</option>
+                </select>
+                <input class="addButton" type="submit" value="Izmeni">
+            </fieldset>    
+        </form>
+    </div>
+    <button onclick="odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>

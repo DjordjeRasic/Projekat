@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prijavljeni Termini</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Clan/prijavljeniTermini.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="terminiClan.html" target="_self">Termini</a></li>
+            <li><a href="clan.html" target="_self">Profil</a></li>
+            <li><a href="prijavljeniTermini.html" target="_self">Prijavljeni Termini</a></li>
+            <li><a href="ocenjeniTermini.html" target="_self">Ocenjeni Termini</a></li>
+            <li><a href="odradjeniTermini.html" target="_self">Odradjeni Termini</a></li>
+        </ul>
+    </nav>
+    <table id="tabelaPrijavljenihTermina">
+        <thead>
+            <tr>
+                <th colspan = "9">PRIJAVLJENI TERMINI</th>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <th>Početak</th> 
+                <th>Trajanje</th> 
+                <th>Kraj</th> 
+                <th>Trening</th>
+                <th>Sala</th>
+                <th>Fitness Centar</th>
+                <th>Trener</th>
+                <th>Odjava</th> 
+            </tr>
+        </thead>
+        <tbody id="prijavljeni"></tbody>
+    </table>
+    <button onclick="odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>

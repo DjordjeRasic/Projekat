@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Clan/terminiClan.js"></script>
+    <title>Termini</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="terminiClan.html" target="_self">Termini</a></li>
+            <li><a href="clan.html" target="_self">Profil</a></li>
+            <li><a href="prijavljeniTermini.html" target="_self">Prijavljeni Termini</a></li>
+            <li><a href="ocenjeniTermini.html" target="_self">Ocenjeni Termini</a></li>
+            <li><a href="odradjeniTermini.html" target="_self">Odradjeni Termini</a></li>
+        </ul>
+    </nav>
+    <div class="terminiWrap">
+        <form method="GET" name="filter" id="filter">
+            <fieldset>
+                <h3>Pretraga po kriterijumima</h3>
+                <label for="cena">Unesite maksimalnu cenu: </label>
+                <input type="text" name = "cena">
+                <label for="datum">Unesite najkasniji datum obržavanja: </label>
+                <input type="date" name = "datum">
+                <select name = "naziv" id="naziv">
+                    <option value = "sviNazivi">Svi nazivi</option>
+                </select>
+                <select name = "opis" id="opis">
+                    <option value = "sviOpisi">Svi opisi</option>
+                </select>
+                <select name = "tip" id="tip">
+                    <option value = "sviTipovi">Svi tipovi</option>
+                </select> <br>
+                <input id="search" type="submit" value="Traži">
+            </fieldset>
+        </form>
+    </div>
+    <table id="prikazTermina">
+        <thead>
+            <tr>
+                <th colspan="3">TRENING:</th>
+                <th colspan="6">TERMIN TRENINGA:</th>
+            </tr>
+            <tr>
+                <th onclick="sort(0)">Naziv treninga</th>
+                <th onclick="sort(1)">Opis treninga</th>
+                <th onclick="sort(2)">Tip treninga</th>
+                <th onclick="sort(3)">Pocetak termina</th>
+                <th onclick="sort(4)">Kraj termina</th>
+                <th onclick="numberSort(5)">Trajanje termina</th>
+                <th onclick="numberSort(6)">Cena termina</th>
+                <th>Prijava</th>
+                <th>Detalji</th>
+            </tr>
+        </thead>
+        <tbody id="prikaz"></tbody>
+        </tbody>
+    </table>
+</body>
+</html>

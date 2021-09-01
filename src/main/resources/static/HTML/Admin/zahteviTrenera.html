@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahtevi Trenera</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Admin/zahteviTrenera.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="zahteviTrenera.html" target="_self">Zahtevi Trenera</a></li>
+            <li><a href="prikazTrenera.html" target="_self">Prikaz Trenera</a></li>
+            <li><a href="registracijaTrenera.html" target="_self">Registruj Trenera</a></li>
+            <li><a href="fitnessCentar.html" target="_self">Fitness Centri</a></li>
+            <li><a href="prikazSala.html" target="_self">Prikaz sala</a></li>
+        </ul>
+    </nav>
+    <table id="zahteviTrenera">
+        <tr>
+            <th colspan = "7">ZAHTEVI TRENERA</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Korisnicko Ime</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>ID Centra</th>
+            <th>Prihvati</th>
+            <th>Odbij</th>
+        </tr>
+    </table>
+    <button onclick = "odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>

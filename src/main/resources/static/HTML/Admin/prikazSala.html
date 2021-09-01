@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prikaz Sala</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Admin/prikazSala.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="zahteviTrenera.html" target="_self">Zahtevi Trenera</a></li>
+            <li><a href="prikazTrenera.html" target="_self">Prikaz Trenera</a></li>
+            <li><a href="registracijaTrenera.html" target="_self">Registruj Trenera</a></li>
+            <li><a href="fitnessCentar.html" target="_self">Fitness Centri</a></li>
+            <li><a href="prikazSala.html" target="_self">Prikaz sala</a></li>
+        </ul>
+    </nav>
+    <table id="prikazSala">
+        <tr>
+            <th colspan = "4">SALE</th>
+            <th colspan = "2"><a href="dodavanjeSale.html"><button class="addButton">DODAJ</button></a></th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Oznaka</th>
+            <th>Kapacitet</th>
+            <th>Naziv Centra</th>
+            <th>Izmeni</th> 
+            <th>Obriši</th>       
+        </tr>
+    </table>
+    <button onclick = "odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>

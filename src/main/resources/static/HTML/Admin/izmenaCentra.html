@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izmena Centra</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Admin/izmenaCentra.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="zahteviTrenera.html" target="_self">Zahtevi Trenera</a></li>
+            <li><a href="prikazTrenera.html" target="_self">Prikaz Trenera</a></li>
+            <li><a href="registracijaTrenera.html" target="_self">Registruj Trenera</a></li>
+            <li><a href="fitnessCentar.html" target="_self">Fitness Centri</a></li>
+            <li><a href="prikazSala.html" target="_self">Prikaz sala</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <form method="POST" name = "forma">
+            <fieldset>
+                <label for="naziv">Naziv centra:</label>
+                <input id="naziv" name="naziv" type="text">
+                <label for="adresa">Adresa centra:</label>
+                <input id="adresa" name="adresa" type="text">
+                <label for="broj">Broj telefona:</label>
+                <input id="broj" name="broj" type="text">
+                <label for="email">Email adresa</label>
+                <input id="email" name="email" type="text">
+                <input class="addButton" type = "submit" value = "Izmeni">
+            </fieldset>
+        </form>
+    </div>
+    <button onclick = "odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../Javascript/termini.js"></script>
+    <title>Termini</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../../index.html" target="_self">Početna</a></li>
+            <li><a href="registracija.html" target="_self">Registracija</a></li>
+            <li><a href="login.html" target="_self">Prijava</a></li>
+        </ul>
+    </nav>
+    <div class="terminiWrap">
+        <form method="GET" name="filter" id="filter">
+            <fieldset>
+                <h3>Pretraga po kriterijumima</h3>
+                <label for="cena">Unesite maksimalnu cenu: </label>
+                <input type="text" name = "cena">
+                <label for="datum">Unesite najkasniji datum obržavanja: </label>
+                <input type="date" name = "datum">
+                <select name = "naziv" id="naziv">
+                    <option value = "sviNazivi">Svi nazivi</option>
+                </select>
+                <select name = "opis" id="opis">
+                    <option value = "sviOpisi">Svi opisi</option>
+                </select>
+                <select name = "tip" id="tip">
+                    <option value = "sviTipovi">Svi tipovi</option>
+                </select> <br>
+                <input id="search" type="submit" value="Traži">
+            </fieldset>
+        </form>
+    </div>
+    <table id="prikazTermina">
+        <thead>
+            <tr>
+                <th colspan="3">TRENING:</th>
+                <th colspan="4">TERMIN TRENINGA:</th>
+            </tr>
+        </thead>
+        <tbody id="prikaz">
+            <tr>
+                <th onclick="sort(0)">Naziv treninga</th>
+                <th onclick="sort(1)">Opis treninga</th>
+                <th onclick="sort(2)">Tip treninga</th>
+                <th onclick="sort(3)">Pocetak termina</th>
+                <th onclick="sort(4)">Kraj termina</th>
+                <th onclick="numberSort(5)">Trajanje termina</th>
+                <th onclick="numberSort(6)">Cena termina</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

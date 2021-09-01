@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodavanje Sale</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script src="../../Javascript/jquery-3.6.0.min.js"></script>
+    <script src="../../Javascript/Admin/dodavanjeSale.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="zahteviTrenera.html" target="_self">Zahtevi Trenera</a></li>
+            <li><a href="prikazTrenera.html" target="_self">Prikaz Trenera</a></li>
+            <li><a href="registracijaTrenera.html" target="_self">Registruj Trenera</a></li>
+            <li><a href="fitnessCentar.html" target="_self">Fitness Centri</a></li>
+            <li><a href="prikazSala.html" target="_self">Prikaz sala</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <form method="POST" name="dodajSalu">
+            <fieldset>
+                <label for="oznaka">Ime Sale:</label>
+                <input id="oznaka" name="oznaka" type="text" required>
+                <label for="kapacitet">Kapacitet Sale:</label>
+                <input id="kapacitet" name="kapacitet" type="text" required>
+                <select id="fitnessCentar" name="fitnessCentar" required>
+                    <option value="">Odaberite Centar</option>
+                </select>
+                <input class="buttonAdd" type="submit" value="Dodaj">
+            </fieldset>
+        </form>
+    </div>
+    <button onclick = "odjaviSe()" class="logOutButton">ODJAVI SE</button>
+</body>
+</html>
